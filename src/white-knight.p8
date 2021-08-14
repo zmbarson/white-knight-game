@@ -5,8 +5,6 @@ pico-8 cartridge // http://www.pico-8.com
 version 32
 __lua__
 
-
-
 --[[ 
     
 Copyright (c) 2021 ze_eb, tllangham
@@ -31,9 +29,7 @@ SOFTWARE.
 
 ]]--
 
-
-
--- Pico-8 system functions
+--------------- Pico-8 system functions ---------------
 
 function _init()
     goto_main_menu(true)
@@ -77,9 +73,7 @@ function _draw()
         pal()
 end
 
-
-
---------------- globals ---------------
+--------------- Globals ---------------
 
 -- App states
 MAIN_MENU = 0
@@ -112,8 +106,6 @@ instructions_text = {
     "stay alive and escape!"
 }
 
-
-
 -- Game over screen (won)
 princess_rnd_timer = rnd(150) + 30
 knight_rnd_timer = rnd(150) + 30
@@ -121,16 +113,11 @@ hflip = false
 twitch = false
 line_timer = 0
 
-
-
 -- Game over screen (lost) globals
 game_over_menu_items = {
     "retry",
     "quit",
 }
-
-
-
  -- Gameplay globals 
  game_intro_text = {
      "our story so far...",
@@ -160,8 +147,6 @@ play_start_time = 0
 play_time = 0
 show_intro = true
 secret_key_spawned = false
-
-
 
 --------------- Game state handlers ---------------
 
@@ -649,8 +634,6 @@ function get_tile(x, y)
     return g_tiles[x + y * 128]
 end
 
-
-
 --------------- Tile object system ---------------
 
 -- "Class" declaration
@@ -748,8 +731,6 @@ end
 function PitfallFloor:on_stand(entity)
     entity:goto_state(EntityStates.Fall)
 end
-
-
 
 --------------- Entity object system ---------------
 
@@ -1071,8 +1052,6 @@ function Entity:goto_state(state)
     end
 end
 
-
-
 --------------- Concrete entity types ---------------
 
 -- Knight
@@ -1373,7 +1352,7 @@ function Knight:update()
     end
 end
 
---falling
+-- Falling
 function Knight:on_enter_state_4()
     if(princess:is_alive()) princess:force_say(rnd(Princess.knight_is_a_moron_msgs))
     sfx(4)
@@ -1811,8 +1790,6 @@ function Eye:draw()
     self.pupil_x = cx + 2 * cos(self.angle)
     self.pupil_y = cy + 2 * sin(self.angle)
     circfill(self.pupil_x, self.pupil_y, 1, 12)
-
-    --rect(self.x+self.solid_x,self.y+self.solid_y,self.x+self.solid_x+self.solid_w,self.y+self.solid_y+self.solid_h, 7)
 end
 
 -- Key
@@ -1874,9 +1851,8 @@ function SideDoor:touch(other)
     end
 end
 
-
-
 --------------- Pathfinding ---------------
+													
 Pathfinding = { }
 PathList = { }
 PathList.__index = PathList
@@ -2019,8 +1995,6 @@ function Pathfinding:make_path(tail)
 
     return path
 end
-
-
 
 --------------- General/utility functions ---------------
 
