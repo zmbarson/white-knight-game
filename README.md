@@ -19,8 +19,8 @@ The theme was "you are not the hero," thus, in this game you play the damsel in 
 <p align="center">
   <b>Links:</b><br>
   <a href="https://tllangham.itch.io/white-knight">itch.io page</a> | 
-  <a href="https://itch.io/jam/bored-pixels-jam-8/rate/1134025">jam submission & results</a> | 
-  <a href="https://www.lexaloffle.com/bbs/?tid=44226">pico 8 bbs</a>
+  <a href="https://itch.io/jam/bored-pixels-jam-8/rate/1134025">Jam submission & results</a> | 
+  <a href="https://www.lexaloffle.com/bbs/?tid=44226">Pico 8 bbs</a>
   <br><br>
 </p>
 
